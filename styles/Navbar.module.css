@@ -1,14 +1,14 @@
 .container {
-  @apply bg-myellow flex
+  @apply bg-myellow flex flex-col
 }
 .containerBox1 {
-  @apply  p-10 basis-1/2
+  @apply  pt-10 px-10 
 }
 .containerBox1Title {
   @apply text-mwhite text-3xl font-bold
 }
 .containerBox2 {
-  @apply  basis-full  self-stretch flex  items-end py-2
+  @apply basis-full basis-1/2 self-stretch flex justify-center items-end py-2
 }
 .containerBox2Link {
  @apply px-5 text-mwhite font-medium
