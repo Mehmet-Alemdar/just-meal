@@ -1,7 +1,8 @@
 import Category from '../components/Category'
+import FilterMenu from '../components/FilterMenu'
 
 export default function Home() {
-  const meals = [
+  const categories = [
     {
       idCategory: '14',
       strCategory: 'Goat',
@@ -56,16 +57,51 @@ export default function Home() {
     },
   ]
 
+  const meals = [
+    { strCategory: 'Beef'},
+    { strCategory: 'Breakfast'},
+    { strCategory: 'Chicken'},
+    { strCategory: 'Dessert'},
+    { strCategory: 'Lamb'},
+    { strCategory: 'Miscellaneous'},
+    { strCategory: 'Vegetarian'},
+    { strCategory: 'Beef'},
+    { strCategory: 'Breakfast'},
+    { strCategory: 'Chicken'},
+    { strCategory: 'Dessert'},
+    { strCategory: 'Lamb'},
+    { strCategory: 'Miscellaneous'},
+    { strCategory: 'Vegetarian'},
+  ]
+
+  const areas = [
+    {strAres: 'American'},
+    {strAres: 'British'},
+    {strAres: 'Canadian'},
+    {strAres: 'Chinese'},
+    {strAres: 'French'},
+    {strAres: 'Vietnamese'},
+    {strAres: 'Portuguese'},
+    {strAres: 'American'},
+    {strAres: 'British'},
+    {strAres: 'Canadian'},
+    {strAres: 'Chinese'},
+    {strAres: 'French'},
+    {strAres: 'Vietnamese'},
+    {strAres: 'Portuguese'},
+
+  ]
   return (
-    <div className='flex'>
-      <div className='bg-red-100 basis-1/5 max-w-xs'>
-        sidebar
+    <div className='flex pt-5 px-5'>
+      <div className='flex-initial w-1/4 min-w-min justify-center mt-11'>
+        <FilterMenu title={'Categories'} data={meals}/>
+        <FilterMenu title={'Areas'} data={areas}/>
       </div>
-      <div className='basis-full justify-center text-center pt-5'>
+      <div className='basis-full justify-center text-center'>
         <h1 className='text-2xl font-light font-serif text-mblack'>All Meal Categories</h1>
         <div className='flex flex-wrap justify-center'>
           {
-            meals?.map((item) => <Category data={item} key={item.idCategory} />)
+            categories?.map((item) => <Category data={item} key={item.idCategory} />)
           }
         </div>
       </div>
