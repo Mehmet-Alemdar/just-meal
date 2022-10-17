@@ -92,12 +92,16 @@ export default function Home() {
 
   ]
   return (
-    <div className='flex pt-5 px-5'>
-      <div className='flex-initial w-1/4 min-w-min justify-center mt-11'>
-        <FilterMenu title={'Categories'} data={meals}/>
-        <FilterMenu title={'Areas'} data={areas}/>
+    <div className='md:flex'>
+      <div className='flex md:flex-col md:w-80 md:pt-10 pt-8 md:px-0'>
+        <div className='md:p-5 mx-2 md:flex-none flex-1 bg-mwhite md:bg-mwhite'>
+          <FilterMenu title={'Categories'} data={meals}/>
+        </div>
+        <div className='md:p-5 mx-2 md:flex-none flex-1 bg-mwhite md:bg-mwhite'>
+          <FilterMenu title={'Areas'} data={areas}/>
+        </div>
       </div>
-      <div className='basis-full justify-center text-center'>
+      <div className='w-full justify-start text-center pt-10'>
         <h1 className='text-2xl font-light font-serif text-mblack'>All Meal Categories</h1>
         <div className='flex flex-wrap justify-center'>
           {
@@ -105,7 +109,20 @@ export default function Home() {
           }
         </div>
       </div>
-
     </div>
+    // <div className='flex flex-col pt-5 px-5 bg-yellow-200 md:flex-row md:bg-blue-200 '>
+    //   <div className='md:flex-initial flex-col w-1/4 min-w-min justify-center mt-11 md:bg-red-200 bg-white'>
+    //     <FilterMenu title={'Categories'} data={meals}/>
+    //     <FilterMenu title={'Areas'} data={areas}/>
+    //   </div>
+    //   <div className='basis-full justify-start text-center'>
+    //     <h1 className='text-2xl font-light font-serif text-mblack'>All Meal Categories</h1>
+    //     <div className='flex flex-wrap justify-center'>
+    //       {
+    //         categories?.map((item) => <Category data={item} key={item.idCategory} />)
+    //       }
+    //     </div>
+    //   </div>
+    // </div>
   )
 }

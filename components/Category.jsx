@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 const Category = ({ data }) => (
-  <div className=" max-w-md my-10 mx-5 text-center bg-white rounded drop-shadow-xl">
+  <div className="md:max-w-md my-10 mx-5 text-center bg-white rounded drop-shadow-xl">
     <div className='text-center my-3'>
       <h1 className="font-normal text-lg font-serif">{ data.strCategory }</h1>
     </div>
@@ -16,7 +16,6 @@ const Category = ({ data }) => (
         { data.strCategoryDescription?.substring(0,400) }
         {data.strCategoryDescription?.length > 400 && <span className='text-myellow cursor-pointer font-medium'> ...read more</span>}
       </p>
-
     </div>
   </div>
 )

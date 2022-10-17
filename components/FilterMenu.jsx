@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FilterMenu = ({ title, data }) => {
   const [filter, setFilter] = useState([])
@@ -16,9 +16,9 @@ const FilterMenu = ({ title, data }) => {
 
   return (
     <>
-      <div className="max-w-md bg-stone-100 my-5 mx-3 drop-shadow-xl">
+      <div className="max-w-md bg-stone-100 md:my-5 md:mx-3 drop-shadow-xl rounded">
         <h1 className="pb-5 font-serif text-lg p-5 ">{title}</h1>
-        <div className="max-h-96 overflow-y-auto p-5 ">
+        <div className="md:visible md:h-96 overflow-y-auto md:p-5 invisible h-0">
           {data?.map((item, i) => (
             <div className="pb-3" key={i}>
               <div className="flex felx-col justify-start pb-1">
@@ -27,7 +27,7 @@ const FilterMenu = ({ title, data }) => {
                   {title === 'Categories' ? item.strCategory : item.strAres}
                   </p>
               </div>
-              <hr class="w-full h-0 rounded border-1 border-gray-300" />
+              <hr className="w-full h-0 rounded border-1 border-gray-300" />
             </div>
           ))}
         </div>
