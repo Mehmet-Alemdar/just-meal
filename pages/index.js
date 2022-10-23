@@ -92,18 +92,15 @@ export default function Home() {
 
   ]
   return (
-    <div className='md:flex'>
-      <div className='flex md:flex-col md:w-80 md:pt-10 pt-8 md:px-0'>
-        <div className='md:p-5 mx-2 md:flex-none flex-1 bg-mwhite md:bg-mwhite'>
-          <FilterMenu title={'Categories'} data={meals}/>
-        </div>
-        <div className='md:p-5 mx-2 md:flex-none flex-1 bg-mwhite md:bg-mwhite'>
-          <FilterMenu title={'Areas'} data={areas}/>
+    <div className='flex mx-10'>
+      <div className='md:flex md:w-80 md:pt-10 pt-8 hidden'>
+        <div className='md:flex-none w-full flex-1'>
+          <FilterMenu titles={['Categories', 'Areas']} data={[meals, areas]}/>
         </div>
       </div>
-      <div className='w-full justify-start text-center pt-10'>
+      <div className='w-full justify-center text-center pt-10'>
         <h1 className='text-2xl font-light font-serif text-mblack'>All Meal Categories</h1>
-        <div className='flex flex-wrap justify-center'>
+        <div className='flex flex-wrap justify-start'>
           {
             categories?.map((item) => <Category data={item} key={item.idCategory} />)
           }

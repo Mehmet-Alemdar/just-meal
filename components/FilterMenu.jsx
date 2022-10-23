@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { MdArrowDropDown, MdOutlineHighlightOff } from 'react-icons/md'
 
-const FilterMenu = ({ title, data }) => {
+const FilterMenu = ({ titles, data }) => {
   const [filter, setFilter] = useState([])
 
   const handleChange = (e) => {
@@ -16,24 +17,29 @@ const FilterMenu = ({ title, data }) => {
 
   return (
     <>
-      <div className="max-w-md bg-stone-100 md:my-5 md:mx-3 drop-shadow-xl rounded">
-        <h1 className="pb-5 font-serif text-lg p-5 ">{title}</h1>
-        <div className="md:visible md:h-96 overflow-y-auto md:p-5 invisible h-0">
-          {data?.map((item, i) => (
-            <div className="pb-3" key={i}>
-              <div className="flex felx-col justify-start pb-1">
-                <input className="accent-myellow" type="checkbox" name={title === 'Categories' ? item.strCategory : item.strAres} id="d" onChange={(e) => handleChange(e)} />
-                <p className="px-5 font-light text-base font-sans">
-                  {title === 'Categories' ? item.strCategory : item.strAres}
-                  </p>
-              </div>
-              <hr className="w-full h-0 rounded border-1 border-gray-300" />
-            </div>
-          ))}
+      {data.map((items,index) => (
+        <div className="md:w-full w-96  bg-stone-100 my-5 md:drop-shadow-xl rounded">
+          <div className="flex p-5 justify-between">
+            <h1 className="font-serif text-lg">{titles[index]}</h1>
+          </div>
+          <div className="md:h-96 md:max-w-96 h-72  overflow-y-auto p-5">
+            {
+              items.map((item, i) => (
+                <div className="pb-3" key={i}>
+                  <div className="flex felx-col justify-start pb-1">
+                    <input className="accent-myellow" type="checkbox" id="d" onChange={(e) => handleChange(e)} />
+                    <p className="px-5 font-light text-base font-sans">
+                      {Object.values(item)}
+                    </p>
+                  </div>
+                  <hr className="w-full h-0 rounded border-1 border-gray-300" />
+                </div>
+              ))
+            }
+          </div>
         </div>
-      </div>
+      ))}
     </>
-
   );
 }
  
