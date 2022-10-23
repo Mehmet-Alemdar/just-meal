@@ -1,23 +1,34 @@
-import styles from '../styles/Navbar.module.css'
 import Link from 'next/link';
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { AiOutlineClose } from 'react-icons/ai'
+import SidebarMenu from './SidebarMenu';
 
-const Navbar = () => {
+const Navbar = ({ handleToggle, toggleSidebar }) => {
   return (
-    <div className={styles.container}>
-      <Link href='/'>
-        <div className={styles.containerBox1}>
-          <h1 className={styles.containerBox1Title}>Just Meal</h1>
+    <div className="bg-myellow flex flex-row px-10 pt-5 pb-3">
+      <div className='flex flex-row flex-none w-72  items-center gap-5'>
+        <div>
+          {
+            toggleSidebar 
+            ? <AiOutlineClose size={25} color="#fff" className='cursor-pointer md:invisible visible' onClick={handleToggle}/>
+            : <GiHamburgerMenu size={25} color="#fff" className='cursor-pointer md:invisible visible' onClick={handleToggle}/>
+          }
         </div>
-      </Link>
-      <div className={styles.containerBox2}>
+        <div className="">
+          <Link href="/">
+            <h1 className="text-white text-3xl font-bold cursor-pointer">Just Meal</h1>
+          </Link>
+        </div>
+      </div>
+      <div className="flex-1 self-stretch md:flex justify-center items-end md:visible hidden">
         <Link href='/'>
-          <a className={styles.containerBox2Link}>Home</a>
+          <a className="px-5 text-white font-medium cursor-pointer">Home</a>
         </Link>
         <Link href='/search'>
-          <a className={styles.containerBox2Link}>Search</a>
+          <a className="px-5 text-white font-medium cursor-pointer">Search</a>
         </Link>
         <Link href='/random-meal'>
-          <a className={styles.containerBox2Link}>Random Meal</a>
+          <a className="px-5 text-white font-medium cursor-pointer">Random Meal</a>
         </Link>
       </div>
     </div>
