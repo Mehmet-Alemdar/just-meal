@@ -59,7 +59,7 @@ const SidebarMenu = ({ toggleSidebar }) => {
             <hr className="w-full h-0 rounded border-1 border-gray-300 pb-4" />
           </div>
           <h1 className="font-semibold text-xl">Filter</h1>
-          <FilterMenu title={'Categories'} data={[meals, areas]}/>
+          <FilterMenu titles={['Categories', 'Areas']} data={[meals, areas]}/>
         </div>
       }
     </>

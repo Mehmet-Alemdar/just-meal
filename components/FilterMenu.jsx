@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { MdArrowDropDown, MdOutlineHighlightOff } from 'react-icons/md'
 
 const FilterMenu = ({ titles, data }) => {
   const [filter, setFilter] = useState([])
+  const router = useRouter()
+  const { name } = router.query
 
   const handleChange = (e) => {
     if(e.target.checked) {
@@ -14,6 +17,13 @@ const FilterMenu = ({ titles, data }) => {
       setFilter(newArray)
     }
   }
+
+  useEffect(() => {
+    if(filter.length > 0) {
+      router.push(`/category/${filter}`)
+    } 
+
+  }, [filter])
 
   return (
     <>
@@ -27,7 +37,7 @@ const FilterMenu = ({ titles, data }) => {
               items.map((item, i) => (
                 <div className="pb-3" key={i}>
                   <div className="flex felx-col justify-start pb-1">
-                    <input className="accent-myellow" type="checkbox" id="d" onChange={(e) => handleChange(e)} />
+                    <input className={`accent-myellow`} type="checkbox" name={`${Object.values(item)}`} id="d" onChange={(e) => handleChange(e)} />
                     <p className="px-5 font-light text-base font-sans">
                       {Object.values(item)}
                     </p>
