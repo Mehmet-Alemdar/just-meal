@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const Search = ({ toggleSearch, handleSearch }) => {
   const [searchText, setSearchText] = useState('')
 
