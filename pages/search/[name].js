@@ -2,7 +2,6 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 import Category from "../../components/Category"
 import { baseUrl, fetchApiWithParam } from '../../utils/fetchApi'
-import Image from "next/image"
 
 const Search = ({ meals }) => {
   const router = useRouter()
