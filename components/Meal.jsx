@@ -16,12 +16,6 @@ const Meal = ({ data }) => (
           className='rounded '
         />
       </div>
-      {/* <div className='my-5 mx-10 text-left'>
-        <p className="text-mblack font-light text-base font-sans">
-          { data.strCategoryDescription?.substring(0,250) }
-          {data.strCategoryDescription?.length > 250 && <span className='text-myellow cursor-pointer font-medium'> ...read more</span>}
-        </p>
-      </div> */}
     </div>
   </Link>
 
