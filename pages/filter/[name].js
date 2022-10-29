@@ -1,7 +1,6 @@
 import { useRouter } from "next/router"
 import { useState } from "react"
 import Category from "../../components/Category"
-import FilterMenu from "../../components/FilterMenu"
 import { baseUrl ,fetchApi, fetchApiWithParam } from '../../utils/fetchApi'
 
 // const mealArr = [
@@ -70,9 +69,6 @@ const Filter = ({ meals }) => {
       <div className="w-11/12">
         <h1 className='text-2xl font-light font-serif text-mblack'>{ name }</h1>
         <div className="flex flex-row">
-          {/* <div className="md:list-item md:w-80 my-5 hidden ml-5">
-            <FilterMenu />
-          </div> */}
           <div className="basis-full grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center">
             {/* { 
               meals.length >= 5
