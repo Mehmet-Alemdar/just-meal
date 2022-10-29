@@ -32,7 +32,7 @@ const Detail = ({mealRandom}) => {
                   Object.keys(mealRandom).filter(element => element.substring(0,13) === 'strIngredient').map((item, index) => {
                     if(mealRandom[`strIngredient${index}`] !== null && mealRandom[`strIngredient${index}`] !== '') {
                       return (
-                        <li>{mealRandom[`strIngredient${index + 1}`]} <span className="font-bold">{mealRandom[`strMeasure${index + 1}`]}</span> </li>
+                        <li key={index}>{mealRandom[`strIngredient${index + 1}`]} <span className="font-bold">{mealRandom[`strMeasure${index + 1}`]}</span> </li>
                       )
                     }
                   })

@@ -32,7 +32,7 @@ const RandomRecipe = ({ mealRandom }) => {
                   Object.keys(mealRandom).filter(element => element.substring(0,13) === 'strIngredient').map((item, index) => {
                     if(mealRandom[`strIngredient${index}`] !== null && mealRandom[`strIngredient${index}`] !== '') {
                       return (
-                        <li>{mealRandom[`strIngredient${index + 1}`]} <span className="font-bold">{mealRandom[`strMeasure${index + 1}`]}</span> </li>
+                        <li key={index}>{mealRandom[`strIngredient${index + 1}`]} <span className="font-bold">{mealRandom[`strMeasure${index + 1}`]}</span> </li>
                       )
                     }
                   })
@@ -58,7 +58,7 @@ const RandomRecipe = ({ mealRandom }) => {
             <iframe 
               src={(mealRandom.strYoutube).replace('watch?v=', 'embed/')}
               className="my-5 md:w-3/4 w-full md:h-full h-72"
-              allowfullscreen="allowfullscreen"
+              allowFullScreen="allowfullscreen"
               mozallowfullscreen="mozallowfullscreen" 
               msallowfullscreen="msallowfullscreen" 
               oallowfullscreen="oallowfullscreen" 
