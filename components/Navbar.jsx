@@ -29,7 +29,10 @@ const Navbar = ({ handleToggle, toggleSidebar, handleSearch }) => {
           <a className="px-5 text-white font-medium cursor-pointer">Search</a>
         </Link> */}
         <Link href='/random-meal'>
-          <a className="px-5 text-white font-medium cursor-pointer">Random Meal</a>
+          <a className="px-5 text-white font-medium cursor-pointer">10 Random Meal</a>
+        </Link>
+        <Link href='/random-recipe'>
+          <a className="px-5 text-white font-medium cursor-pointer">Random Recipe</a>
         </Link>
       </div>
       <div className='flex flex-1 flex-col justify-center items-end'>
