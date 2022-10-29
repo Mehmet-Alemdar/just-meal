@@ -1,6 +1,5 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import SidebarMenu from "./SidebarMenu";
 import Search from "./Searchbar";
 import { useState } from "react";
 
@@ -21,7 +20,6 @@ const Layout = ({ children, filterToggle }) => {
     <div className="bg-mwhite">
       <Navbar handleToggle={ handleToggle } toggleSidebar= { toggleSidebar } handleSearch= { handleSearch } />
       <Search handleSearch= { handleSearch } toggleSearch= { toggleSearch } />
-      <SidebarMenu toggleSidebar={ toggleSidebar } />
       {!toggleSidebar && 
         <main>{ children }</main>
       }
