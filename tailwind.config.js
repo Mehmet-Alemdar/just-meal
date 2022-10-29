@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'myellow': '#F9B300',
+        'myellow': '#F0A200',
+        'myellow-100': '#FFF2BA',
         'mwhite': '#EFEFEF',
         'mblack': '#4F4F4F'
       }
