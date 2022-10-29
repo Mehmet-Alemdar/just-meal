@@ -12,7 +12,7 @@ const Search = ({ meals }) => {
 
   return (
     <div className='w-full flex flex-col items-center justify-center text-center pt-10'>
-      <div className="md:w-11/12">
+      <div className="md:w-11/12 w-full">
         <div className="flex items-center justify-center gap-2">
           <h1 className='text-xl font-light font-serif text-mblack'>You Searched</h1>
           <h1 className='text-2xl font-light font-serif text-myellow'> { name.toUpperCase() }</h1>

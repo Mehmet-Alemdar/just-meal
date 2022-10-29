@@ -11,7 +11,7 @@ const Filter = ({ meals }) => {
 
   return (
     <div className='w-ful flex flex-col gap-5 justify-center items-center text-center pt-10'>
-      <div className="md:w-11/12">
+      <div className="md:w-11/12 w-full">
         <h1 className='text-2xl font-light font-serif text-mblack'>{ name }</h1>
         <div className="flex flex-row">
           <div className="basis-full grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center">
