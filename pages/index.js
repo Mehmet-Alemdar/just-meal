@@ -1,7 +1,8 @@
-import Category from '../components/Meal'
+import { baseUrl ,fetchApi, fetchApiWithParam } from '../utils/fetchApi'
+import Meal from '../components/Meal'
 import FilterMenu from '../components/FilterMenu'
 
-export default function Home() {
+export default function Home({ mealCategories }) {
   const meals = [
     {
       idCategory: '14',
@@ -56,77 +57,25 @@ export default function Home() {
       strCategoryDescription: 'Breakfast is the first meal of a day. The word in English refers to breaking the fasting period of the previous night. There is a strong likelihood for one or more "typical", or "traditional", breakfast menus to exist in most places, but their composition varies widely from place to place, and has varied over time, so that globally a very wide range of preparations and ingredients are now associated with breakfast.'
     },
   ]
-
-  // const meals = [
-  //   { strCategory: 'Beef'},
-  //   { strCategory: 'Breakfast'},
-  //   { strCategory: 'Chicken'},
-  //   { strCategory: 'Dessert'},
-  //   { strCategory: 'Lamb'},
-  //   { strCategory: 'Miscellaneous'},
-  //   { strCategory: 'Vegetarian'},
-  //   { strCategory: 'Beef'},
-  //   { strCategory: 'Breakfast'},
-  //   { strCategory: 'Chicken'},
-  //   { strCategory: 'Dessert'},
-  //   { strCategory: 'Lamb'},
-  //   { strCategory: 'Miscellaneous'},
-  //   { strCategory: 'Vegetarian'},
-  // ]
-
-  // const areas = [
-  //   {strAres: 'American'},
-  //   {strAres: 'British'},
-  //   {strAres: 'Canadian'},
-  //   {strAres: 'Chinese'},
-  //   {strAres: 'French'},
-  //   {strAres: 'Vietnamese'},
-  //   {strAres: 'Portuguese'},
-  //   {strAres: 'American'},
-  //   {strAres: 'British'},
-  //   {strAres: 'Canadian'},
-  //   {strAres: 'Chinese'},
-  //   {strAres: 'French'},
-  //   {strAres: 'Vietnamese'},
-  //   {strAres: 'Portuguese'},
-  // ]
   return (
-    <div className='w-full justify-center text-center pt-10'>
-      <h1 className='text-2xl font-light font-serif text-mblack'>All Meal</h1>
-      <div className='grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center'>
-        {
-          meals?.map((item) => <Category data={item} key={item.idCategory} />)
-        }
+    <div className='w-full flex justify-center text-center pt-10'>
+      <div className='w-11/12'>
+        <h1 className='text-2xl font-light font-serif text-mblack'>All Meals</h1>
+        <div className='grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center'>
+          {
+            mealCategories?.map((item, i) => <Meal data={item} key={i} />)
+          }
+        </div>
       </div>
     </div>
-    // <div className='flex mx-10'>
-    //   <div className='md:flex md:w-80 md:pt-10 pt-8 hidden'>
-    //     <div className='md:flex-none w-full flex-1'>
-    //       <FilterMenu titles={['Categories', 'Areas']} data={[meals, areas]}/>
-    //     </div>
-    //   </div>
-    //   <div className='w-full justify-center text-center pt-10'>
-    //     <h1 className='text-2xl font-light font-serif text-mblack'>All Meal Categories</h1>
-    //     <div className='flex flex-wrap justify-center'>
-    //       {
-    //         categories?.map((item) => <Category data={item} key={item.idCategory} />)
-    //       }
-    //     </div>
-    //   </div>
-    // </div>
-    // <div className='flex flex-col pt-5 px-5 bg-yellow-200 md:flex-row md:bg-blue-200 '>
-    //   <div className='md:flex-initial flex-col w-1/4 min-w-min justify-center mt-11 md:bg-red-200 bg-white'>
-    //     <FilterMenu title={'Categories'} data={meals}/>
-    //     <FilterMenu title={'Areas'} data={areas}/>
-    //   </div>
-    //   <div className='basis-full justify-start text-center'>
-    //     <h1 className='text-2xl font-light font-serif text-mblack'>All Meal Categories</h1>
-    //     <div className='flex flex-wrap justify-center'>
-    //       {
-    //         categories?.map((item) => <Category data={item} key={item.idCategory} />)
-    //       }
-    //     </div>
-    //   </div>
-    // </div>
   )
+}
+
+export async function getStaticProps() {
+  const mealCategories = await fetchApi(`${baseUrl}/categories.php`)
+  return {
+    props: {
+      mealCategories: mealCategories.categories,
+    }
+  }
 }
