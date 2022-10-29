@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router"
-
 
 const Category = ({ data }) => {
-  const router = useRouter()
   const id = data.idMeal
 
   return ( 
@@ -25,7 +22,6 @@ const Category = ({ data }) => {
         <p className="text-mblack font-light text-base font-sans my-5 mx-10">{data?.strArea}</p>
       </div>
     </Link>
-
    );
 }
  
