@@ -10,12 +10,12 @@ const Detail = ({mealRandom}) => {
         <Image
           src={ mealRandom?.strMealThumb }
           placeholder="blur"
+          alt="recipeimage"
           blurDataURL={ mealRandom?.strMealThumb }
           width={800}
           height={500}
           objectFit='cover'
           className="rounded"
-          alt="recipeImage"
         />
         <h1 className='text-2xl font-bold font-serif text-myellow mt-5'> { mealRandom.strMeal }</h1>
         <div className="flex items-center gap-3 my-5">

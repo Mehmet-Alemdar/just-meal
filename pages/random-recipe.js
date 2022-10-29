@@ -11,11 +11,11 @@ const RandomRecipe = ({ mealRandom }) => {
           src={ mealRandom?.strMealThumb }
           placeholder="blur"
           blurDataURL={ mealRandom?.strMealThumb }
+          alt="randomrecipeimage"
           width={800}
           height={500}
           objectFit='cover'
           className="rounded"
-          alt="randomRecipeImage"
         />
         <h1 className='text-2xl font-bold font-serif text-myellow mt-5'> { mealRandom.strMeal }</h1>
         <div className="flex items-center gap-3 my-5">
