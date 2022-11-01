@@ -2,11 +2,11 @@
 
 
 ## Just Meal is a recipe website
-> Published via [Vercel](https://vercel.com/).
 
 ## Visit the [Just Meal](https://just-meal-mehmet-alemdar.vercel.app/) website.
+> Published via [Vercel](https://vercel.com/).
 
-The data on the Just Meal website is from [TheMealDB API](https://rapidapi.com/thecocktaildb/api/themealdb/) on the Rapid API site.
+#### The data on the Just Meal website is from [TheMealDB API](https://rapidapi.com/thecocktaildb/api/themealdb/) on the Rapid API site.
 
 ## Technologies used on this website:
 - Next.js
