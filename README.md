@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ![JM 1](https://user-images.githubusercontent.com/60268874/199335082-c144faad-b89a-4f2f-af5a-d10d74576301.svg) Just Meal
 
-## Getting Started
 
-First, run the development server:
+## Just Meal is a recipe website
+> Published via [Vercel](https://vercel.com/).
 
+## Visit the [Just Meal](https://just-meal-mehmet-alemdar.vercel.app/) website.
+
+The data on the Just Meal website is from [TheMealDB API](https://rapidapi.com/thecocktaildb/api/themealdb/) on the Rapid API site.
+
+## Technologies used on this website:
+- Next.js
+- React.js
+- Tailwind CSS
+- Axios
+
+## To run this project
+**⚠ In order to pull the data in the project, you need to get an api key from [TheMealDB API](https://rapidapi.com/thecocktaildb/api/themealdb/) in Rapidapi.**
+Enter the project and type these in the terminal respectively and run
+> to download packages in the project
+```bash
+npm intall
+```
+> and then to run the project
 ```bash
 npm run dev
 # or
 yarn dev
 ```
-
+> and finally 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# View of the site
+> ![Screen Shot 2022-11-01 at 23 19 18](https://user-images.githubusercontent.com/60268874/199333428-d22c7230-f244-4325-8b5c-4ee7802a7174.png)
+> ![Screen Shot 2022-11-01 at 23 20 11](https://user-images.githubusercontent.com/60268874/199333559-d85fa402-903d-46ae-ac82-c29ead122842.png)
+> ## Responsive
+> ![Screen Shot 2022-11-01 at 23 32 23](https://user-images.githubusercontent.com/60268874/199335240-3f79e239-e164-46bb-bc4d-81d12efcf7af.png)
+> ![Screen Shot 2022-11-01 at 23 24 27](https://user-images.githubusercontent.com/60268874/199333941-231a90c6-1592-471d-be53-a5ba45cba9c1.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
