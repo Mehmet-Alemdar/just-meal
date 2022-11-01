@@ -16,6 +16,7 @@ The data on the Just Meal website is from [TheMealDB API](https://rapidapi.com/t
 
 ## To run this project
 **⚠ In order to pull the data in the project, you need to get an api key from [TheMealDB API](https://rapidapi.com/thecocktaildb/api/themealdb/) in Rapidapi.**
+
 Enter the project and type these in the terminal respectively and run
 > to download packages in the project
 ```bash
